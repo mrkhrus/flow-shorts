@@ -109,6 +109,7 @@ const settingsTrigger = (page: Page) => page.getByRole("button", { name: "Settin
 // Video tiles at rest expose neither, and their signed thumbnail URL is re-signed over time - using it as a handle
 // made old tiles look new. Titles are stable, so an id-less tile is identified by its title instead.
 const TILE_ID_JS = `(tile) => {
+  if (tile.querySelector("flow-error-tile")) return undefined;
   const media = tile.querySelector("img[data-media-id], video[data-media-id], img[src], video[src]");
   const id = media && (media.getAttribute("data-media-id") || media.getAttribute("src")?.match(/[0-9a-f]{8}-[0-9a-f-]{27}/)?.[0]);
   if (id) return id;
@@ -243,6 +244,7 @@ export async function freshMedia(page: Page, before: string[], kind?: MediaKind)
         id: idOf(t),
         kind: t.querySelector("flow-video-tile") ? "video" : t.querySelector("flow-image-tile") ? "image" : "other",
         label: t.getAttribute("aria-label") ?? "",
+        isError: !!t.querySelector("flow-error-tile"),
         // For the first seconds after Start generation, before any "NN%" shows, a new video tile is titled with the
         // prompt itself and has no thumbnail; then it takes a short title of Flow's own and counts up; finished, it
         // has its thumbnail (watched live 2026-10-16, a 4 s clip: prompt title at 9 s, "0%" at 12 s, 100% at 34 s,
@@ -255,7 +257,7 @@ export async function freshMedia(page: Page, before: string[], kind?: MediaKind)
     },
     TILE_ID_JS,
   );
-  const ours = tiles.filter((t) => t.id && !before.includes(t.id) && !t.label.startsWith("fm-") && !t.busy && (!kind || t.kind === kind));
+  const ours = tiles.filter((t) => t.id && !t.isError && !before.includes(t.id) && !t.label.startsWith("fm-") && !t.busy && (!kind || t.kind === kind));
   return [...new Set(ours.map((t) => t.id!))];
 }
 
@@ -308,6 +310,7 @@ async function openSettings(page: Page): Promise<void> {
 }
 
 async function pickRadio(page: Page, name: string | RegExp): Promise<void> {
+  await openSettings(page);
   const radio = page.getByRole("radio", { name, exact: typeof name === "string" }).first();
   if (!(await radio.isVisible().catch(() => false))) {
     throw new Error(`Flow has no "${name}" option for the current mode/model.`);
@@ -350,7 +353,7 @@ async function pickModel(page: Page, model: string): Promise<void> {
   if (index < 0 || (latest && shown.includes(names[index]))) {
     // Nothing to change (already the newest, or no numbered Nano Banana here at all): close the menu, pick nothing.
     await page.keyboard.press("Escape");
-    await clearBackdrops(page);
+    await pause(page, 300);
     if (index < 0 && !latest) throw new Error(`Model "${model}" not found. Available here: ${names.join(", ")}`);
     return;
   }
