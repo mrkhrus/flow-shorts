@@ -1,6 +1,8 @@
 # 🚀 Google Flow YouTube Shorts Automation Engine
+**Author:** Ali Noor  
+**Repository:** [github.com/mrkhrus/flow-shorts](https://github.com/mrkhrus/flow-shorts)
 
-Automate viral 9:16 vertical YouTube Shorts (20–28 seconds) using **Google Flow**, **`flow-mcp`**, and **Antigravity / Claude Desktop**, featuring:
+Automate viral 9:16 vertical YouTube Shorts (20–28 seconds) using **Google Flow**, **`flow-shorts`**, and **Antigravity / Claude Desktop**, featuring:
 - 🎨 **Consistent Character Storytelling** (Pixar/Disney 3D animation style)
 - 🔁 **3-Second Episode Recap** (`[ PICHLI BAAR / RECAP ]`)
 - 🎙️ **Studio-Mastered Urdu Voiceover** (`ur-PK-AsadNeural` with parametric EQ & compression)
@@ -13,8 +15,8 @@ Automate viral 9:16 vertical YouTube Shorts (20–28 seconds) using **Google Flo
 
 ### Step 1: Clone the Repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/flow-mcp.git
-cd flow-mcp
+git clone https://github.com/mrkhrus/flow-shorts.git
+cd flow-shorts
 ```
 
 ### Step 2: Run the 1-Click Installer

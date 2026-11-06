@@ -3,6 +3,7 @@ setlocal enabledelayedexpansion
 
 echo ========================================================
 echo   Google Flow Shorts Automation - 1-Click Setup
+echo   Developed by Ali Noor
 echo ========================================================
 echo.
 

@@ -1,7 +1,7 @@
 {
-  "name": "flow-mcp",
+  "name": "flow-shorts",
   "version": "0.1.0",
-  "description": "Local MCP server that drives Google Flow in a dedicated Chrome profile",
+  "description": "Automated YouTube Shorts pipeline driving Google Flow with consistent characters, AI Urdu voiceover, and kinetic subtitles",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,8 +10,14 @@
     "login": "node dist/login.js",
     "studio": "node dist/studio.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "google-flow",
+    "youtube-shorts",
+    "automation",
+    "mcp",
+    "video-generation"
+  ],
+  "author": "Ali Noor",
   "license": "ISC",
   "type": "module",
   "bin": {

@@ -1,3 +1,9 @@
+"""
+Google Flow Shorts Automation Pipeline
+Author: Ali Noor
+Automates Urdu Voiceover (Edge-TTS), DSP Audio Mastering, Frame-Accurate Captions, and FFmpeg Rendering.
+"""
+
 import os
 import sys
 import json
@@ -71,7 +77,7 @@ def render_final_short(video_clips: list, audio_file: str, ass_file: str, final_
     subprocess.run(cmd, check=True)
 
 def main():
-    parser = argparse.ArgumentParser(description="Autonomous YouTube Shorts Generator")
+    parser = argparse.ArgumentParser(description="Autonomous YouTube Shorts Generator by Ali Noor")
     parser.add_argument("--episode", type=int, default=3, help="Episode number (e.g. 3)")
     parser.add_argument("--character", type=str, default="Leo the Clockmaker", help="Protagonist character asset name")
     args = parser.parse_args()
@@ -79,13 +85,14 @@ def main():
     ep = args.episode
     print(f"\n=======================================================")
     print(f"   Generating YouTube Short: Episode {ep}")
+    print(f"   Pipeline created by Ali Noor")
     print(f"=======================================================\n")
 
     project_name = f"Leo_Episode_{ep}"
     project_dir = OUTPUT_ROOT / project_name
     project_dir.mkdir(parents=True, exist_ok=True)
 
-    # Define Episode 3 story and captions
+    # Define Episode 3 story and captions (Character: Leo, No personal name in video)
     urdu_script = (
         "پچھلی بار: وقت کے سکوت میں ایک پراسرار محافظ نے لیو پر حملہ کر دیا تھا۔ "
         "مگر جیسے ہی سیاہ عملہ قریب آیا، لیو کی جیب گھڑی سے سنہری ڈھال نکل آئی! "

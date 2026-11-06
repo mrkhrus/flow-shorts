@@ -1,4 +1,12 @@
-# flow-mcp
+# flow-shorts 🎬⚡
+
+> **Engineered & Automated by Ali Noor**  
+> GitHub: [mrkhrus/flow-shorts](https://github.com/mrkhrus/flow-shorts)  
+> Automated viral 9:16 YouTube Shorts generation using Google Flow, consistent 3D Pixar-style characters, studio-mastered neural Urdu narration, and kinetic subtitles.
+
+👉 **Looking for 1-Click Setup?** See **[AUTOMATION-GUIDE.md](AUTOMATION-GUIDE.md)** to setup and run on any Windows computer with setup.bat!
+
+---
 
 Drive **Google Flow** (flow.google.com) from Claude, Codex or any other MCP app, or from a local control
 panel, using Flow's own credits (free with any Google account: 50 a day), not the pay-per-use video API.
@@ -37,8 +45,8 @@ headless or asleep mid-run.
 ## Install
 
 ```bash
-git clone https://github.com/GTAI-1/flow-mcp.git
-cd flow-mcp
+git clone https://github.com/mrkhrus/flow-shorts.git
+cd flow-shorts
 npm install
 npm run build
 ```
