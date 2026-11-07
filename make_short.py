@@ -92,13 +92,14 @@ def main():
     project_dir = OUTPUT_ROOT / project_name
     project_dir.mkdir(parents=True, exist_ok=True)
 
-    # Define Episode 3 story and captions (Character: Leo, No personal name in video)
+    # Define Episode story and captions (Character: Leo, No personal name in video)
     urdu_script = (
-        "پچھلی بار: وقت کے سکوت میں ایک پراسرار محافظ نے لیو پر حملہ کر دیا تھا۔ "
-        "مگر جیسے ہی سیاہ عملہ قریب آیا، لیو کی جیب گھڑی سے سنہری ڈھال نکل آئی! "
-        "لیو نے دیکھا کہ اس محافظ کے سینے پر بھی وہی قدیم علامت بنی تھی۔ "
-        "کیا وہ محافظ دشمن تھا... یا اس گھڑی کا اصلی مالک؟ "
-        "اگلا حصہ دیکھنے کے لیے سبسکرائب کریں!"
+        "پچھلی بار: وقت کے سکوت میں ایک پراسرار محافظ نے لیو کو گھیر لیا تھا۔ "
+        "جیسے ہی اس نے حملہ کیا، لیو کی گھڑی سے سنہری گیئرز کی ڈھال نکل آئی! "
+        "دھماکے سے نقاب ہٹا تو محافظ کے سینے پر بھی وہی قدیم علامت چمک رہی تھی۔ "
+        "وہ کوئی دشمن نہیں، بلکہ ماضی کا محافظ تھا! "
+        "اور اس نے اشارہ کیا کہ اصل خطرہ آسمانوں کے اس پار ہے۔ "
+        "اگلا حصہ جاننے کے لیے ابھی ساتھ جڑ جائیں!"
     )
 
     raw_audio = str(project_dir / "raw_audio.mp3")
@@ -129,12 +130,13 @@ Style: CTA,Impact,48,&H0000FFFF,&H000000FF,&H00000000,&HFF0000FF,-1,0,0,0,105,10
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.15,0:00:03.80,RecapBadge,,0,0,0,,[ PICHLI BAAR / RECAP ]
-Dialogue: 0,0:00:00.15,0:00:03.80,Yellow,,0,0,0,,SHADOW GUARDIAN NE LEO PAR\\nHAMLA KAR DIYA THA...
-Dialogue: 0,0:00:03.87,0:00:08.50,White,,0,0,0,,MAGAR LEO KI JAADUI GHADI SE\\nEK SONE KI DHAL NIKAL AAYI!
-Dialogue: 0,0:00:08.55,0:00:13.20,Yellow,,0,0,0,,LEO NE DEKHA KE MUHAAFIZ PAR BHI\\nWOHI QADEEM NISHAN THA!
-Dialogue: 0,0:00:13.25,0:00:17.50,White,,0,0,0,,KYA WOH DUSHMAN THA...\\nYA GHADI KA ASLI MAALIK?
-Dialogue: 0,0:00:17.55,0:00:21.00,CTA,,0,0,0,,AGLA PART DEKHNAY KE LIYE\\nABHI SUBSCRIBE KAREIN! 🔔
+Dialogue: 0,0:00:00.10,0:00:05.00,RecapBadge,,0,0,0,,[ PICHLI BAAR / RECAP ]
+Dialogue: 0,0:00:00.10,0:00:05.00,Yellow,,0,0,0,,WAQT KE SUKOOT MEIN EK MUHAAFIZ\\NNE LEO KO GHER LIYA THA...
+Dialogue: 0,0:00:05.05,0:00:09.50,White,,0,0,0,,JAISE HI USNE HAMLA KIYA...\\NLEO KI GHADI SE DHAAL NIKAL AAYI!
+Dialogue: 0,0:00:09.55,0:00:14.50,Yellow,,0,0,0,,DHAMAKAY SE NAQAB HATA TOH\\NMUHAAFIZ PAR BHI WOHI NISHAN THA!
+Dialogue: 0,0:00:14.55,0:00:17.70,White,,0,0,0,,WOH KOI DUSHMAN NAHI THA...\\NBALKE MAAZI KA NIGEHBAAN THA!
+Dialogue: 0,0:00:17.75,0:00:21.60,Yellow,,0,0,0,,AUR USNE ISHARA KIYA KE\\NASAL KHATRA ASMAAN KE PAAR HAI!
+Dialogue: 0,0:00:21.65,0:00:24.95,CTA,,0,0,0,,AGLA HISSA JAAN'NAY KE LIYE\\NABHI SAATH JUD JAYEIN!
 """
     with open(ass_file, "w", encoding="utf-8") as f:
         f.write(ass_content.strip())
