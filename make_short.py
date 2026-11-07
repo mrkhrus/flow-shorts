@@ -99,7 +99,7 @@ def main():
         "دھماکے سے نقاب ہٹا تو محافظ کے سینے پر بھی وہی قدیم علامت چمک رہی تھی۔ "
         "وہ کوئی دشمن نہیں، بلکہ ماضی کا محافظ تھا! "
         "اور اس نے اشارہ کیا کہ اصل خطرہ آسمانوں کے اس پار ہے۔ "
-        "اگلا حصہ جاننے کے لیے ابھی ساتھ جڑ جائیں!"
+        "اگلا حصہ دیکھنا مت بھولیے گا!"
     )
 
     raw_audio = str(project_dir / "raw_audio.mp3")
@@ -136,7 +136,7 @@ Dialogue: 0,0:00:05.05,0:00:09.50,White,,0,0,0,,JAISE HI USNE HAMLA KIYA...\\NLE
 Dialogue: 0,0:00:09.55,0:00:14.50,Yellow,,0,0,0,,DHAMAKAY SE NAQAB HATA TOH\\NMUHAAFIZ PAR BHI WOHI NISHAN THA!
 Dialogue: 0,0:00:14.55,0:00:17.70,White,,0,0,0,,WOH KOI DUSHMAN NAHI THA...\\NBALKE MAAZI KA NIGEHBAAN THA!
 Dialogue: 0,0:00:17.75,0:00:21.60,Yellow,,0,0,0,,AUR USNE ISHARA KIYA KE\\NASAL KHATRA ASMAAN KE PAAR HAI!
-Dialogue: 0,0:00:21.65,0:00:24.95,CTA,,0,0,0,,AGLA HISSA JAAN'NAY KE LIYE\\NABHI SAATH JUD JAYEIN!
+Dialogue: 0,0:00:22.04,0:00:24.80,CTA,,0,0,0,,AGLA HISSA DEKHNA MAT BHOOLIYE GA!
 """
     with open(ass_file, "w", encoding="utf-8") as f:
         f.write(ass_content.strip())
